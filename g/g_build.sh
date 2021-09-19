@@ -2,7 +2,7 @@
 sudo apt-get update
 sudo apt-get upgrade -y
  
-sudo hostnamectl set-hostname arrakisnew
+sudo hostnamectl set-hostname arrakis-g
 
 # #Install Code Server
 # #curl -fsSL https://code-server.dev/install.sh | sh
