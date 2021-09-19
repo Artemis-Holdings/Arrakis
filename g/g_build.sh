@@ -55,7 +55,7 @@ sudo hostnamectl set-hostname arrakisnew
 cd ~/.config/code-server
 sudo rm -f config.yaml
 sudo touch config.yaml
-sudo chmod 744 config.yaml
+sudo chmod 777 config.yaml
 sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
 sudo echo "auth: password" >> ~/.config/code-server/config.yaml
 sudo echo "password: SuperCharming123!@#" >> ~/.config/code-server/config.yaml
