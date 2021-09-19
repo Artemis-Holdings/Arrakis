@@ -1,8 +1,8 @@
 #!/bin/sh
-sudo apt-get update
-sudo apt-get upgrade -y
+# sudo apt-get update
+# sudo apt-get upgrade -y
  
-sudo hostnamectl set-hostname arrakis-g
+# sudo hostnamectl set-hostname arrakis-g
 
 # #Install Code Server
 # #curl -fsSL https://code-server.dev/install.sh | sh
@@ -53,14 +53,19 @@ sudo hostnamectl set-hostname arrakis-g
 
 #Reset Login Password
 cd ~/.config/code-server
+echo pwd
 sudo rm -f config.yaml
+echo ls -a
 sudo touch config.yaml
-sudo chmod 777 config.yaml
+echo ls -a
+sudo chmod 777 ~/.config/code-server/config.yaml
+echo ls -a
+
 sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
 sudo echo "auth: password" >> ~/.config/code-server/config.yaml
 sudo echo "password: SuperCharming123!@#" >> ~/.config/code-server/config.yaml
 sudo echo "cert: false" >> ~/.config/code-server/config.yaml
-sudo chmod 444 ~.config/code-server/config.yaml
+sudo chmod 444 ~/.config/code-server/config.yaml
 
 #Restart
 sudo systemctl restart code-server@$USER
