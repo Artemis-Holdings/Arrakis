@@ -25,7 +25,7 @@ sudo apt install -y nginx certbot python3-certbot-nginx
 cd /etc/nginx/sites-available
 sudo rm -f code-server
 sudo touch code-server
-sudo chmod 777 /etc/nginx/sites-available/code-server
+sudo chmod 744 /etc/nginx/sites-available/code-server
 
 sudo echo "server {" > /etc/nginx/sites-available/code-server
 sudo echo "    listen 80;" >> /etc/nginx/sites-available/code-server
@@ -52,10 +52,15 @@ sudo certbot --non-interactive --redirect --agree-tos --nginx -d arrakis-g.eastu
 
 
 #Reset Login Password
+cd ~/.config/code-server
+sudo rm -f config.yaml
+sudo touch config.yaml
+sudo chmod 744 config.yaml
 sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
 sudo echo "auth: password" >> ~/.config/code-server/config.yaml
 sudo echo "password: SuperCharming123!@#" >> ~/.config/code-server/config.yaml
 sudo echo "cert: false" >> ~/.config/code-server/config.yaml
+sudo chmod 444 ~.config/code-server/config.yaml
 
 #Restart
 sudo systemctl restart code-server@$USER
