@@ -52,7 +52,7 @@
     "fileUris": {
       "type": "array",
       "defaultValue": [
-        "https://raw.githubusercontent.com/Artemis-Holdings/Arrakis/main/build.sh"
+        "https://raw.githubusercontent.com/Artemis-Holdings/Arrakis/main/g/g_build.sh"
       ]
     }
   },
@@ -262,7 +262,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {},
         "protectedSettings": {
-          "commandToExecute": "bash build.sh",
+          "commandToExecute": "bash g_build.sh",
           "fileUris": "[parameters('fileUris')]"
         }
       },
