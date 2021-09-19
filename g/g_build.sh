@@ -4,21 +4,21 @@ sudo apt-get upgrade -y
  
 sudo hostnamectl set-hostname arrakisnew
 
-# #Install Code Server
-# #curl -fsSL https://code-server.dev/install.sh | sh
-# sudo curl -fsSL -o ~/code-server-install.sh https://code-server.dev/install.sh
-# sudo chmod 744 ~/code-server-install.sh
-# sudo ~/code-server-install.sh
-# rm ~/code-server-install.sh
+#Install Code Server
+#curl -fsSL https://code-server.dev/install.sh | sh
+sudo curl -fsSL -o ~/code-server-install.sh https://code-server.dev/install.sh
+sudo chmod 744 ~/code-server-install.sh
+sudo ~/code-server-install.sh
+rm ~/code-server-install.sh
 
 
-# #Enable Code Server persistance after cloud restart
-# sudo systemctl enable --now code-server@$USER
+#Enable Code Server persistance after cloud restart
+sudo systemctl enable --now code-server@$USER
 
 
-# #Install encryption tools and Nginx
-# #TODO: make the DNS a variable
-# sudo apt install -y nginx certbot python3-certbot-nginx
+#Install encryption tools and Nginx
+#TODO: make the DNS a variable
+sudo apt install -y nginx certbot python3-certbot-nginx
 
 
 #Modify Nginx
