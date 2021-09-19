@@ -2,10 +2,10 @@
 sudo apt update
 sudo apt upgrade -y
  
-sudo hostnamectl set-hostname arrakis-g
+sudo hostnamectl set-hostname arrakisG
 
 #Install Code Server
-curl -fsSL https://code-server.dev/install.sh | sh
+sudo curl -fsSL https://code-server.dev/install.sh | sh
 #Enable Code Server persistance after restart
 sudo systemctl enable --now code-server@$USER
 

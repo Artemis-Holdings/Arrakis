@@ -1,10 +1,18 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
+  "contentVersion": "1.0.0.1",
   "parameters": {
     "username": {
       "type": "string",
       "defaultValue": "testUser"
+    },
+    "domain": {
+      "type": "string",
+      "defaultValue": "arrakis-g"
+    },
+    "fqdn": {
+      "type": "string",
+      "defaultValue": "arrakis-g.eastus.cloudapp.azure.com"
     },
     "location": {
       "type": "string",
@@ -58,6 +66,7 @@
   },
   "functions": [],
   "variables": {
+ 
     "vmName": "[format('DevOps-VM-{0}', parameters('username'))]",
     "networkSecurityGroupName": "[format('DevOps-VM-NSG-{0}', parameters('username'))]",
     "publicIPAddressName": "[format('DevOps-VM-IP-{0}', parameters('username'))]",
@@ -200,9 +209,15 @@
       "name": "[variables('publicIPAddressName')]",
       "location": "[parameters('location')]",
       "properties": {
-        "publicIPAllocationMethod": "Dynamic",
         "publicIPAddressVersion": "IPv4",
-        "idleTimeoutInMinutes": 4
+        "publicIPAllocationMethod": "Dynamic",
+        "idleTimeoutInMinutes": 4,
+        "dnsSettings": {
+          "domainNameLabel": "[parameters('domain')]",
+          "fqdn": "[parameters('fqdn')]"
+        },
+        "ipTags": []
+
       },
       "sku": {
         "name": "Basic"
