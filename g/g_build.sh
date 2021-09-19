@@ -53,13 +53,10 @@
 
 #Reset Login Password
 cd ~/.config/code-server
-echo pwd
 sudo rm -f config.yaml
-echo ls -a
 sudo touch config.yaml
-echo ls -a
 sudo chmod 777 ~/.config/code-server/config.yaml
-echo ls -a
+
 
 sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
 sudo echo "auth: password" >> ~/.config/code-server/config.yaml
