@@ -1,0 +1,13 @@
+Delete a RG:
+az group delete --name sandbox
+
+Create blank RG:
+az group create --name sandbox --location eastus
+
+Deploy resources to group from JSON:
+az deployment group create --resource-group sandbox --template-file D:\Documents\Git\Arrakis\g\g_deploy.json
+
+
+NEXT STEPS
+- Create deployment CLI for users to automate with.
+- Create build images for duke and barron
