@@ -11,3 +11,13 @@ az deployment group create --resource-group sandbox --template-file D:\Documents
 NEXT STEPS
 - Create deployment CLI for users to automate with.
 - Create build images for duke and barron
+
+
+REF
+https://github.com/cdr/code-server/blob/main/docs/guide.md
+https://github.com/cdr/code-server/blob/main/docs/install.md
+
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/delete-resource-group?tabs=azure-cli
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-cli
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli
+
