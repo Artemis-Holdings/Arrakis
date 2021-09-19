@@ -7,6 +7,8 @@ az group create --name sandbox --location eastus
 Deploy resources to group from JSON:
 az deployment group create --resource-group sandbox --template-file D:\Documents\Git\Arrakis\g\g_deploy.json
 
+Delete old ssh key:
+ssh-keygen -f "/root/.ssh/known_hosts" -R "arrakis-g.eastus.cloudapp.azure.com"
 
 NEXT STEPS
 - Create deployment CLI for users to automate with.
