@@ -5,9 +5,10 @@ sudo apt upgrade -y
 sudo hostnamectl set-hostname arrakisG
 
 #Install Code Server
-sudo curl -fsSL https://code-server.dev/install.sh | sh
+curl -fsSL https://code-server.dev/install.sh | sh
 #Enable Code Server persistance after restart
 sudo systemctl enable --now code-server@$USER
+
 
 
 #Establish Encryption
@@ -19,18 +20,19 @@ cd /etc/nginx/sites-available
 sudo touch code-server
 sudo chmod 777 /etc/nginx/sites-available/code-server
 
-sudo echo " server {" >> /etc/nginx/sites-available/code-server
-sudo echo "listen 80;" >> /etc/nginx/sites-available/code-server
-sudo echo "listen [::]:80;" >> /etc/nginx/sites-available/code-server
+sudo echo "server {" >> /etc/nginx/sites-available/code-server
+sudo echo "    listen 80;" >> /etc/nginx/sites-available/code-server
+sudo echo "    listen [::]:80;" >> /etc/nginx/sites-available/code-server
+sudo echo "" >> /etc/nginx/sites-available/code-server
 #TODO don't forget to make the DNS a variable
-sudo echo "server_name arrakis-g.eastus.cloudapp.azure.com;" >> /etc/nginx/sites-available/code-server
-sudo echo "location / {" >> /etc/nginx/sites-available/code-server
-sudo echo "proxy_pass http://localhost:8080/;" >> /etc/nginx/sites-available/code-server
-sudo echo "proxy_set_header Host $host;" >> /etc/nginx/sites-available/code-server
-sudo echo "proxy_set_header Upgrade $http_upgrade;" >> /etc/nginx/sites-available/code-server
-sudo echo "proxy_set_header Connection upgrade;" >> /etc/nginx/sites-available/code-server
-sudo echo "proxy_set_header Accept-Encoding gzip;" >> /etc/nginx/sites-available/code-server
-sudo echo "}" >> /etc/nginx/sites-available/code-server
+sudo echo "    server_name arrakis-g.eastus.cloudapp.azure.com;" >> /etc/nginx/sites-available/code-server
+sudo echo "    location / {" >> /etc/nginx/sites-available/code-server
+sudo echo "        proxy_pass http://localhost:8080/;" >> /etc/nginx/sites-available/code-server
+sudo echo "        proxy_set_header Host $host;" >> /etc/nginx/sites-available/code-server
+sudo echo "        proxy_set_header Upgrade $http_upgrade;" >> /etc/nginx/sites-available/code-server
+sudo echo "        proxy_set_header Connection upgrade;" >> /etc/nginx/sites-available/code-server
+sudo echo "        proxy_set_header Accept-Encoding gzip;" >> /etc/nginx/sites-available/code-server
+sudo echo "    }" >> /etc/nginx/sites-available/code-server
 sudo echo "}" >> /etc/nginx/sites-available/code-server
 
 sudo chmod 444 /etc/nginx/sites-available/code-server
