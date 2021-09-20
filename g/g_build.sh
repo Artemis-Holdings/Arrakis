@@ -11,7 +11,6 @@ sudo chmod 744 ~/code-server-install.sh
 sudo ~/code-server-install.sh
 rm ~/code-server-install.sh
 
-
 #Enable Code Server persistance after cloud restart
 sudo systemctl enable --now code-server@$USER
 
@@ -19,7 +18,6 @@ sudo systemctl enable --now code-server@$USER
 #Install encryption tools and Nginx
 #TODO: make the DNS a variable
 sudo apt install -y nginx certbot python3-certbot-nginx
-
 
 #Modify Nginx
 cd /etc/nginx/sites-available
@@ -49,15 +47,15 @@ sudo chmod 444 /etc/nginx/sites-available/code-server
 sudo ln -s ../sites-available/code-server /etc/nginx/sites-enabled/code-server
 #NOTE: the arakis-g DNS and email need to change based on the user.
 sudo certbot --non-interactive --redirect --agree-tos --nginx -d arrakis-g.eastus.cloudapp.azure.com -m testUser@artemis-holdings.com
-
+#Restart
+sudo systemctl restart code-server@$USER
 
 #Reset Login Password
 cd ~/.config/code-server
 sudo rm -f config.yaml
 sudo touch config.yaml
+
 sudo chmod 777 ~/.config/code-server/config.yaml
-
-
 sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
 sudo echo "auth: password" >> ~/.config/code-server/config.yaml
 sudo echo "password: SuperCharming123!@#" >> ~/.config/code-server/config.yaml
