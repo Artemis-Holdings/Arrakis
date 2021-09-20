@@ -15,7 +15,8 @@ sudo systemctl enable --now code-server@$USER
 sudo apt install -y nginx certbot python3-certbot-nginx
 
 #Certificate modification
-sudo touch /etc/nginx/sites-available/code-server
+cd /etc/nginx/sites-available
+sudo touch code-server
 sudo chmod 777 /etc/nginx/sites-available/code-server
 
 sudo echo " server {" >> /etc/nginx/sites-available/code-server
@@ -32,7 +33,7 @@ sudo echo "proxy_set_header Accept-Encoding gzip;" >> /etc/nginx/sites-available
 sudo echo "}" >> /etc/nginx/sites-available/code-server
 sudo echo "}" >> /etc/nginx/sites-available/code-server
 
-sudo chmod 0444 /etc/nginx/sites-available/code-server
+sudo chmod 444 /etc/nginx/sites-available/code-server
 
 #Enable the config
 sudo ln -s ../sites-available/code-server /etc/nginx/sites-enabled/code-server
