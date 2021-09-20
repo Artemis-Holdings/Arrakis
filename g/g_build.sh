@@ -68,7 +68,7 @@ sudo chmod 744 ~/code-server-install.sh
 # sudo chmod 444 ~/.config/code-server/config.yaml
 
 #Restart
-# sudo systemctl --quiet restart code-server@$USER
+sudo systemctl --quiet restart code-server@$USER
 #Force Restart
 sudo curl -fsSL -o ~/code-server-restart.sh https://raw.githubusercontent.com/Artemis-Holdings/Arrakis/main/g/server_restart.sh
 sudo chmod 777 ~/code-server-restart.sh
