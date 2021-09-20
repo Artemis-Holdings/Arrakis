@@ -10,6 +10,9 @@ az deployment group create --resource-group sandbox --template-file D:\Documents
 Delete old ssh key:
 ssh-keygen -f "/root/.ssh/known_hosts" -R "arrakis-g.eastus.cloudapp.azure.com"
 
+Curl:
+sudo curl -fsSL https://github.com/Artemis-Holdings/Arrakis/blob/main/g/g_build.sh | sh
+
 NEXT STEPS
 - Create deployment CLI for users to automate with.
 - Create build images for duke and barron
