@@ -39,7 +39,7 @@
     },
     "adminPasswordOrKey": {
       "type": "string",
-      "defaultValue": "dkje83&susidh!"
+      "defaultValue": "ChangeThisPassword123"
     },
     "vmSize": {
       "type": "string",
