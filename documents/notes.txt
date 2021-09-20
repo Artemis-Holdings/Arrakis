@@ -11,7 +11,7 @@ Delete old ssh key:
 ssh-keygen -f "/root/.ssh/known_hosts" -R "arrakis-g.eastus.cloudapp.azure.com"
 
 Curl:
-sudo curl -fsSL https://github.com/Artemis-Holdings/Arrakis/blob/main/g/g_build.sh | sh
+sudo curl -fsSL https://raw.githubusercontent.com/Artemis-Holdings/Arrakis/main/g/g_build.sh | sh
 
 NEXT STEPS
 - Create deployment CLI for users to automate with.
