@@ -24,7 +24,6 @@ cd /etc/nginx/sites-available
 sudo rm -f code-server
 sudo touch code-server
 sudo chmod 744 /etc/nginx/sites-available/code-server
-
 sudo echo "server {" > /etc/nginx/sites-available/code-server
 sudo echo "    listen 80;" >> /etc/nginx/sites-available/code-server
 sudo echo "    listen [::]:80;" >> /etc/nginx/sites-available/code-server
@@ -51,12 +50,14 @@ sudo certbot --non-interactive --redirect --agree-tos --nginx -d arrakis-g.eastu
 sudo systemctl restart code-server@$USER
 
 #Reset Login Password
+#CURL Method
 cd ~/.config/code-server
 sudo rm -f config.yaml
 sudo curl -fsSL -o ~/.config/code-server/config.yaml https://raw.githubusercontent.com/Artemis-Holdings/Arrakis/main/g/config.yaml
 sudo chmod 744 ~/code-server-install.sh
 
 # # ECHO Version
+#v1
 # cd ~/.config/code-server
 # sudo rm -f config.yaml
 # sudo touch config.yaml
@@ -66,6 +67,16 @@ sudo chmod 744 ~/code-server-install.sh
 # sudo echo "password: SuperCharming123!@#" >> ~/.config/code-server/config.yaml
 # sudo echo "cert: false" >> ~/.config/code-server/config.yaml
 # sudo chmod 444 ~/.config/code-server/config.yaml
+#v2
+cd ~/.config/code-server
+sudo rm -f ~/.config/code-server/config.yaml
+sudo touch ~/.config/code-server/config.yaml
+sudo chmod -R 777 ~/.config/code-server
+sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
+sudo echo "auth: password" >> ~/.config/code-server/config.yaml
+sudo echo "password: SuperCharming123!@#" >> ~/.config/code-server/config.yaml
+sudo echo "cert: false" >> ~/.config/code-server/config.yaml
+sudo chmod -R 444 ~/.config/code-server
 
 #Restart
 sudo systemctl --quiet restart code-server@$USER
