@@ -24,6 +24,7 @@ cd /etc/nginx/sites-available
 sudo rm -f code-server
 sudo touch code-server
 sudo chmod 777 /etc/nginx/sites-available/code-server
+
 sudo echo "server {" > /etc/nginx/sites-available/code-server
 sudo echo "    listen 80;" >> /etc/nginx/sites-available/code-server
 sudo echo "    listen [::]:80;" >> /etc/nginx/sites-available/code-server
