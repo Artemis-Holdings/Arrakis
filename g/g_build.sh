@@ -40,7 +40,7 @@ sudo echo "        proxy_set_header Accept-Encoding gzip;" >> /etc/nginx/sites-a
 sudo echo "    }" >> /etc/nginx/sites-available/code-server
 sudo echo "}" >> /etc/nginx/sites-available/code-server
 
-sudo chmod 444 /etc/nginx/sites-available/code-server
+sudo chmod 777 /etc/nginx/sites-available/code-server
 
 #Enable the config
 sudo ln -s ../sites-available/code-server /etc/nginx/sites-enabled/code-server
@@ -68,15 +68,15 @@ sudo chmod 744 ~/code-server-install.sh
 # sudo echo "cert: false" >> ~/.config/code-server/config.yaml
 # sudo chmod 444 ~/.config/code-server/config.yaml
 #v2
-cd ~/.config/code-server
-sudo rm -f ~/.config/code-server/config.yaml
-sudo touch ~/.config/code-server/config.yaml
-sudo chmod -R 777 ~/.config/code-server
-sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
-sudo echo "auth: password" >> ~/.config/code-server/config.yaml
-sudo echo "password: SuperCharming123!@#" >> ~/.config/code-server/config.yaml
-sudo echo "cert: false" >> ~/.config/code-server/config.yaml
-sudo chmod -R 444 ~/.config/code-server
+# cd ~/.config/code-server
+# sudo rm -f ~/.config/code-server/config.yaml
+# sudo touch ~/.config/code-server/config.yaml
+# sudo chmod -R 777 ~/.config/code-server
+# sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
+# sudo echo "auth: password" >> ~/.config/code-server/config.yaml
+# sudo echo "password: SuperCharming123!@#" >> ~/.config/code-server/config.yaml
+# sudo echo "cert: false" >> ~/.config/code-server/config.yaml
+# sudo chmod -R 444 ~/.config/code-server
 
 #Restart
 sudo systemctl --quiet restart code-server@$USER
