@@ -49,8 +49,8 @@ sudo certbot --non-interactive --redirect --agree-tos --nginx -d arrakis-g2.east
 #Restart
 sudo systemctl restart code-server@$USER
 
-#Reset Login Password
-#CURL Method
+# #Reset Login Password
+# #CURL Method
 # cd ~/.config/code-server
 # sudo rm -f config.yaml
 # sudo curl -fsSL -o ~/.config/code-server/config.yaml https://raw.githubusercontent.com/Artemis-Holdings/Arrakis/main/g/config.yaml
@@ -68,20 +68,20 @@ sudo systemctl restart code-server@$USER
 # sudo echo "cert: false" >> ~/.config/code-server/config.yaml
 # sudo chmod 444 ~/.config/code-server/config.yaml
 # v2
-cd ~/.config/code-server
-sudo rm -f ~/.config/code-server/config.yaml
-sudo touch ~/.config/code-server/config.yaml
+# cd ~/.config/code-server
+# sudo rm -f ~/.config/code-server/config.yaml
+# sudo touch ~/.config/code-server/config.yaml
 # sudo chmod -R 777 ~/.config/code-server
-sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
-sudo echo "auth: password" >> ~/.config/code-server/config.yaml
-sudo echo "password: ChangeThisPassword123" >> ~/.config/code-server/config.yaml
-sudo echo "cert: false" >> ~/.config/code-server/config.yaml
+# sudo echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
+# sudo echo "auth: password" >> ~/.config/code-server/config.yaml
+# sudo echo "password: ChangeThisPassword123" >> ~/.config/code-server/config.yaml
+# sudo echo "cert: false" >> ~/.config/code-server/config.yaml
 # sudo chmod -R 444 ~/.config/code-server
 
 #Restart
 sudo systemctl --quiet restart code-server@$USER
 #Force Restart
 sudo curl -fsSL -o ~/code-server-restart.sh https://raw.githubusercontent.com/Artemis-Holdings/Arrakis/main/g/server_restart.sh
-# sudo chmod 777 ~/code-server-restart.sh
+
 sudo ~/code-server-restart.sh
 rm ~/code-server-restart.sh
