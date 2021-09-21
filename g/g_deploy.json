@@ -8,11 +8,11 @@
     },
     "domain": {
       "type": "string",
-      "defaultValue": "arrakis-g"
+      "defaultValue": "arrakis-g2"
     },
     "fqdn": {
       "type": "string",
-      "defaultValue": "arrakis-g.eastus.cloudapp.azure.com"
+      "defaultValue": "arrakis-g2.eastus.cloudapp.azure.com"
     },
     "location": {
       "type": "string",
