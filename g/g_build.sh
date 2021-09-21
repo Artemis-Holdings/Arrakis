@@ -5,9 +5,8 @@ sudo apt-get upgrade -y
 sudo hostnamectl set-hostname arrakis-g
 
 #Install Code Server
-#curl -fsSL https://code-server.dev/install.sh | sh
 sudo curl -fsSL -o ~/code-server-install.sh https://code-server.dev/install.sh
-# sudo chmod 744 ~/code-server-install.sh
+sudo chmod 744 ~/code-server-install.sh
 sudo ~/code-server-install.sh
 # rm ~/code-server-install.sh
 
