@@ -23,7 +23,7 @@ sudo apt install -y nginx certbot python3-certbot-nginx
 cd /etc/nginx/sites-available
 sudo rm -f code-server
 sudo touch code-server
-sudo chmod 744 /etc/nginx/sites-available/code-server
+sudo chmod 777 /etc/nginx/sites-available/code-server
 sudo echo "server {" > /etc/nginx/sites-available/code-server
 sudo echo "    listen 80;" >> /etc/nginx/sites-available/code-server
 sudo echo "    listen [::]:80;" >> /etc/nginx/sites-available/code-server
@@ -40,7 +40,7 @@ sudo echo "        proxy_set_header Accept-Encoding gzip;" >> /etc/nginx/sites-a
 sudo echo "    }" >> /etc/nginx/sites-available/code-server
 sudo echo "}" >> /etc/nginx/sites-available/code-server
 
-sudo chmod 777 /etc/nginx/sites-available/code-server
+sudo chmod 744 /etc/nginx/sites-available/code-server
 
 #Enable the config
 sudo ln -s ../sites-available/code-server /etc/nginx/sites-enabled/code-server
